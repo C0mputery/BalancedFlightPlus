@@ -19,7 +19,14 @@ import software.bernie.geckolib.renderer.GeoRenderer;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+/*public class KineticGeckoRenderInfo<T extends KineticBlockEntity & GeoAnimatable, I extends Item & GeoAnimatable> {
+    public KineticGeckoRenderInfo(ConfiguredGeoModel model, ICreateSafeRenderer createSafeRenderer, BlockState defaultBlockState, BlockEntityRenderer<T> customRenderer) {
+
+    }
+}*/
+
 public class KineticGeckoRenderInfo<T extends KineticBlockEntity & GeoAnimatable, I extends Item & GeoAnimatable> {
+
     public Function<BlockEntityRendererProvider.Context, GeckoCreateRenderer<T>> TileRenderer;
     public Supplier<GeoItemRenderer<I>> ItemRenderer;
 

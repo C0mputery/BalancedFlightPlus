@@ -60,20 +60,20 @@ public class BalancedFlight {
             .tag(BlockTags.MINEABLE_WITH_PICKAXE)
             .tag(BlockTags.NEEDS_IRON_TOOL)
             .geckoItem(FlightAnchorItem::new)
-            .initialProperties(() -> new Item.Properties().stacksTo(1))
+            .initialProperties(() -> new Item.Properties().stacksTo(16))
             .build()
             .register();
 
     public static final BlockEntry<? extends Block> FLIGHT_DISRUPTOR_BLOCK = BalancedFlight.CREATE_REGISTRATE
             .object("flight_disruptor")
             .block(FlightDisruptorBlock::new)
-            .transform(BlockStressDefaults.setImpact(256.0D))
+            .transform(BlockStressDefaults.setImpact(128.0D))
             .properties(properties -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(10).sound(SoundType.NETHERITE_BLOCK).noOcclusion())
             .defaultLoot()
             .tag(BlockTags.MINEABLE_WITH_PICKAXE)
-            .tag(BlockTags.NEEDS_IRON_TOOL)
+            .tag(BlockTags.NEEDS_DIAMOND_TOOL)
             .geckoItem(FlightDisruptorItem::new)
-            .initialProperties(() -> new Item.Properties().stacksTo(1))
+            .initialProperties(() -> new Item.Properties().stacksTo(16))
             .build()
             .register();
 

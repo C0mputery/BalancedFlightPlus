@@ -10,7 +10,6 @@ public class ConfiguredGeoModel extends GeoModel
     private String name;
 
     public ConfiguredGeoModel(String name) {
-
         this.name = name;
     }
 

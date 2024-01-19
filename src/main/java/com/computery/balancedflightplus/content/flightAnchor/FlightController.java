@@ -1,6 +1,7 @@
 package com.computery.balancedflightplus.content.flightAnchor;
 
 import com.computery.balancedflightplus.content.flightAnchor.entity.FlightAnchorEntity;
+import com.computery.balancedflightplus.content.flightDisruptor.entity.FlightDisruptorEntity;
 import com.computery.balancedflightplus.foundation.compat.AscendedRingCurio;
 import com.computery.balancedflightplus.foundation.config.BalancedFlightConfig;
 import net.minecraft.core.Vec3i;
@@ -84,7 +85,7 @@ public class FlightController
         if (onlyCareAboutElytra && !CanElytraFly)
             return FlightMode.None;
 
-        if (IsWithinFlightRange(player))
+        if (IsWithinFlightRange(player) && !IsBeingDisrupted(player))
             return FlightMode.fromBools(CanElytraFly, CanCreativeFly);
         else
             return FlightMode.None;
@@ -101,6 +102,19 @@ public class FlightController
                 .entrySet()
                 .stream()
                 .anyMatch(anchor -> distSqr(anchor.getKey(), player.position()) < (anchorDistanceMultiplier * anchor.getValue().getSpeed()) * (anchorDistanceMultiplier * anchor.getValue().getSpeed()));
+    }
+
+    private static boolean IsBeingDisrupted(Player player)
+    {
+        if (player.level().dimension() != Level.OVERWORLD)
+            return false;
+
+        double disruptorsDistanceMultiplier = BalancedFlightConfig.disruptorDistanceMultiplier.get();
+
+        return FlightDisruptorEntity.ActiveDisruptors
+                .entrySet()
+                .stream()
+                .anyMatch(anchor -> distSqr(anchor.getKey(), player.position()) < (disruptorsDistanceMultiplier * (anchor.getValue().getSpeed() / 4 ) * (disruptorsDistanceMultiplier * anchor.getValue().getSpeed() / 4)));
     }
 
     private static double distSqr(Vec3i vec, Vec3 other) {

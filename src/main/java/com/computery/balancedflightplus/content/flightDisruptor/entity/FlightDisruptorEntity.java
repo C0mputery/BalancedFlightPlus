@@ -27,7 +27,7 @@ public class FlightDisruptorEntity extends KineticBlockEntity implements GeoBloc
         return INFINITE_EXTENT_AABB;
     }
 
-    public static Map<BlockPos, com.computery.balancedflightplus.content.flightDisruptor.entity.FlightDisruptorEntity> ActiveAnchors = new HashMap<>();
+    public static Map<BlockPos, com.computery.balancedflightplus.content.flightDisruptor.entity.FlightDisruptorEntity> ActiveDisruptors = new HashMap<>();
 
     List<BeaconBlockEntity.BeaconBeamSection> beamSections = Lists.newArrayList();
     List<BeaconBlockEntity.BeaconBeamSection> checkingBeamSections = Lists.newArrayList();

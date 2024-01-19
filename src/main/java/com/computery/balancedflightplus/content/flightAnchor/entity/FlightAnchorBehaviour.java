@@ -25,7 +25,6 @@ import java.util.List;
 
 public class FlightAnchorBehaviour extends BlockEntityBehaviour
 {
-
     public static final BehaviourType<FlightAnchorBehaviour> TYPE = new BehaviourType();
 
     public FlightAnchorBehaviour(SmartBlockEntity be)

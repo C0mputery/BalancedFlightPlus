@@ -44,15 +44,15 @@ public class FlightDisruptorBehaviour extends BlockEntityBehaviour
         
         if (!active)
         {
-            FlightDisruptorEntity.ActiveAnchors.remove(getPos());
+            FlightDisruptorEntity.ActiveDisruptors.remove(getPos());
             playSound(getWorld(), getPos(), SoundEvents.BEACON_DEACTIVATE);
             return;
         }
 
-        if (FlightDisruptorEntity.ActiveAnchors.containsKey(getPos()))
+        if (FlightDisruptorEntity.ActiveDisruptors.containsKey(getPos()))
             return;
 
-        FlightDisruptorEntity.ActiveAnchors.put(getPos(), (FlightDisruptorEntity) blockEntity);
+        FlightDisruptorEntity.ActiveDisruptors.put(getPos(), (FlightDisruptorEntity) blockEntity);
         playSound(getWorld(), getPos(), SoundEvents.BEACON_ACTIVATE);
     }
 
