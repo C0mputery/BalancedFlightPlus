@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "balancedflightplus:block/flight_anchor"
+  }
+}

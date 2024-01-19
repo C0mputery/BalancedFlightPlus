@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.computery.balancedflightplus.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "balancedflightplus.refmap.json",
+  "plugin": "com.computery.balancedflightplus.mixins.BalancedFlightMixinPlugin",
+  "mixins": [
+    "ElytraServerMixin",
+    "ElytraUpdateMixin"
+  ],
+  "client": [
+    "ElytraRocketShiftKeyMixin",
+    "ElytraMixin"
+  ],
+  "minVersion": "0.8"
+}

@@ -1,0 +1,98 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:magma_block"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "chance": 100.0,
+      "item": "balancedflightplus:flight_disruptor"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:magma_block"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:magma_block"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:magma_block"
+        },
+        {
+          "item": "create:railway_casing"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:magma_block"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:magma_block"
+        },
+        {
+          "item": "create:brass_block"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:magma_block"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:magma_block"
+        },
+        {
+          "item": "minecraft:glass"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:magma_block"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:magma_block"
+        },
+        {
+          "item": "minecraft:fire_charge"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:magma_block"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "minecraft:magma_block"
+  }
+}
