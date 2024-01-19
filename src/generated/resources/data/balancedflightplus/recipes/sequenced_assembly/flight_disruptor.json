@@ -1,13 +1,17 @@
 {
   "type": "create:sequenced_assembly",
   "ingredient": {
-    "item": "minecraft:magma_block"
+    "item": "minecraft:wither_skeleton_skull"
   },
   "loops": 1,
   "results": [
     {
-      "chance": 100.0,
+      "chance": 50.0,
       "item": "balancedflightplus:flight_disruptor"
+    },
+    {
+      "chance": 50.0,
+      "item": "minecraft:wither_skeleton_skull"
     }
   ],
   "sequence": [
@@ -15,7 +19,7 @@
       "type": "create:deploying",
       "ingredients": [
         {
-          "item": "minecraft:magma_block"
+          "item": "minecraft:wither_skeleton_skull"
         },
         {
           "item": "create:precision_mechanism"
@@ -23,7 +27,7 @@
       ],
       "results": [
         {
-          "item": "minecraft:magma_block"
+          "item": "minecraft:wither_skeleton_skull"
         }
       ]
     },
@@ -31,7 +35,7 @@
       "type": "create:deploying",
       "ingredients": [
         {
-          "item": "minecraft:magma_block"
+          "item": "minecraft:wither_skeleton_skull"
         },
         {
           "item": "create:railway_casing"
@@ -39,7 +43,7 @@
       ],
       "results": [
         {
-          "item": "minecraft:magma_block"
+          "item": "minecraft:wither_skeleton_skull"
         }
       ]
     },
@@ -47,7 +51,7 @@
       "type": "create:deploying",
       "ingredients": [
         {
-          "item": "minecraft:magma_block"
+          "item": "minecraft:wither_skeleton_skull"
         },
         {
           "item": "create:brass_block"
@@ -55,7 +59,7 @@
       ],
       "results": [
         {
-          "item": "minecraft:magma_block"
+          "item": "minecraft:wither_skeleton_skull"
         }
       ]
     },
@@ -63,15 +67,15 @@
       "type": "create:deploying",
       "ingredients": [
         {
-          "item": "minecraft:magma_block"
+          "item": "minecraft:wither_skeleton_skull"
         },
         {
-          "item": "minecraft:glass"
+          "item": "minecraft:red_stained_glass"
         }
       ],
       "results": [
         {
-          "item": "minecraft:magma_block"
+          "item": "minecraft:wither_skeleton_skull"
         }
       ]
     },
@@ -79,20 +83,20 @@
       "type": "create:deploying",
       "ingredients": [
         {
-          "item": "minecraft:magma_block"
+          "item": "minecraft:wither_skeleton_skull"
         },
         {
-          "item": "minecraft:fire_charge"
+          "item": "minecraft:magma_cream"
         }
       ],
       "results": [
         {
-          "item": "minecraft:magma_block"
+          "item": "minecraft:wither_skeleton_skull"
         }
       ]
     }
   ],
   "transitionalItem": {
-    "item": "minecraft:magma_block"
+    "item": "minecraft:wither_skeleton_skull"
   }
 }

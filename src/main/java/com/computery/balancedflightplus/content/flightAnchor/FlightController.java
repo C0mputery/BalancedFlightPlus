@@ -63,6 +63,10 @@ public class FlightController
             CanCreativeFly = BalancedFlightConfig.CreativeAscended.get();
             FlightMode allowedModes = FlightMode.fromBools(CanElytraFly, CanCreativeFly);
 
+            if (IsBeingDisrupted(player)) {
+                return FlightMode.fromBools(CanElytraFly, false);
+            }
+
             // if it's just creative, both, or neither, just return
             if (allowedModes != FlightMode.Elytra)
                 return allowedModes;
@@ -82,10 +86,14 @@ public class FlightController
         CanElytraFly = BalancedFlightConfig.ElytraAnchor.get();
         CanCreativeFly = BalancedFlightConfig.CreativeAnchor.get();
 
+        if (IsBeingDisrupted(player)) {
+            return FlightMode.fromBools(CanElytraFly, false);
+        }
+
         if (onlyCareAboutElytra && !CanElytraFly)
             return FlightMode.None;
 
-        if (IsWithinFlightRange(player) && !IsBeingDisrupted(player))
+        if (IsWithinFlightRange(player))
             return FlightMode.fromBools(CanElytraFly, CanCreativeFly);
         else
             return FlightMode.None;

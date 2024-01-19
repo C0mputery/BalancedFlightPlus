@@ -55,7 +55,6 @@ public class BalancedFlightRecipeGen extends CreateRecipeProvider {
                 .require(Blocks.WITHER_SKELETON_SKULL)
                 .transitionTo(Blocks.WITHER_SKELETON_SKULL)
                 .addOutput(BalancedFlight.FLIGHT_DISRUPTOR_BLOCK.get(), 50.0F)
-                .addOutput(Blocks.WITHER_SKELETON_SKULL, 50.0F)
                 .loops(1)
                 .addStep(DeployerApplicationRecipe::new, (rb) -> rb.require(com.simibubi.create.AllItems.PRECISION_MECHANISM.get()))
                 .addStep(DeployerApplicationRecipe::new, (rb) -> rb.require(com.simibubi.create.AllBlocks.RAILWAY_CASING.get()))

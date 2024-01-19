@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-18T15:48:37.0965351	Registrate Provider for balancedflightplus [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+// 1.20.1	2024-01-19T15:55:10.2511879	Registrate Provider for balancedflightplus [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
 15c53315d8cfbcc4d50b14b10e1c946b3204486f assets/balancedflightplus/blockstates/flight_anchor.json
 82f1d89d91402925010daeabebf8e9d263bfaa60 assets/balancedflightplus/blockstates/flight_disruptor.json
 97a4621fcdb637996a06741697f911f6fb52d8b0 assets/balancedflightplus/lang/en_ud.json
@@ -11,4 +11,5 @@ c6659a55eedf7e1aa5107b03bc983838c8966f8b assets/balancedflightplus/models/item/f
 72255290fb59a003f2734cdd507089ff2f3356e2 data/balancedflightplus/loot_tables/blocks/flight_anchor.json
 7a4e8092204cf80f8a8bcd8e5e7b4fa0cb2c4fdb data/balancedflightplus/loot_tables/blocks/flight_disruptor.json
 eadae9eaa48ff0a758aad75beb2bf560b478fefe data/minecraft/tags/blocks/mineable/pickaxe.json
-eadae9eaa48ff0a758aad75beb2bf560b478fefe data/minecraft/tags/blocks/needs_iron_tool.json
+713be92b68a03d106b354e171804fc7e5eb55ab4 data/minecraft/tags/blocks/needs_diamond_tool.json
+e167c7c640092f30f978a71dd86c449c81355e1d data/minecraft/tags/blocks/needs_iron_tool.json
