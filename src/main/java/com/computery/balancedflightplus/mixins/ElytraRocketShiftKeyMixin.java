@@ -26,7 +26,7 @@ public class ElytraRocketShiftKeyMixin
         if (player.isFallFlying() && BalancedFlightConfig.infiniteRockets.get())
         {
             FlightController.FlightMode allowed = FlightController.AllowedFlightModes(player, true);
-            if (!allowed.canElytraFly())
+            if (!allowed.canElytraFly() || FlightController.IsBeingDisrupted(player))
                 return;
 
             if (player.isSprinting() && player.input.hasForwardImpulse())

@@ -21,9 +21,9 @@ public class InputEvents {
             assert Minecraft.getInstance().player != null;
             LocalPlayer player = Minecraft.getInstance().player;
 
-            if (player.onGround() && !player.isFallFlying()) {
+            if ((player.onGround() || player.isInWater() ) && !player.isFallFlying()) {
 
-                if (!FlightController.AllowedFlightModes(player, true).canElytraFly())
+                if (!FlightController.AllowedFlightModes(player, true).canElytraFly() || FlightController.IsBeingDisrupted(player))
                     return;
 
                 Vec3 vector3d = player.getLookAngle();

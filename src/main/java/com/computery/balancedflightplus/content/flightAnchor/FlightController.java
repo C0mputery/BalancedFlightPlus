@@ -112,7 +112,7 @@ public class FlightController
                 .anyMatch(anchor -> distSqr(anchor.getKey(), player.position()) < (anchorDistanceMultiplier * anchor.getValue().getSpeed()) * (anchorDistanceMultiplier * anchor.getValue().getSpeed()));
     }
 
-    private static boolean IsBeingDisrupted(Player player)
+    public static boolean IsBeingDisrupted(Player player)
     {
         if (player.level().dimension() != Level.OVERWORLD)
             return false;
