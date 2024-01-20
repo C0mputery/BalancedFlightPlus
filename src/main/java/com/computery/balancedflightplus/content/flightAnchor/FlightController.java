@@ -15,24 +15,21 @@ public class FlightController
 {
     public static void tick(Player player)
     {
-        if (isInCreativeOrSpectator(player)) {
+        if (isInCreativeOrSpectator(player) ||  player.tickCount < 20) { // This is a hack to fix something that I don't understand
             return;
         }
-
-        // Print thing here
-        System.out.println("FlightController.tick");
 
         FlightMode allowed = AllowedFlightModes(player, false);
         switch (allowed) {
             case None, Elytra -> {
-                if (player.getAbilities().mayfly && !isInCreativeOrSpectator(player)) {
+                if (player.getAbilities().mayfly) {
                     stopFlying(player);
                     // handle falling out of sky
-                    if (!player.onGround()) { player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200)); System.out.println("Giving Slowfall.tick"); }
+                    if (!player.onGround()) { player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200)); }
                 }
             }
             case Creative, Both -> {
-                if (!player.getAbilities().mayfly && !isInCreativeOrSpectator(player)) {
+                if (!player.getAbilities().mayfly) {
                     if (player.hasEffect(MobEffects.SLOW_FALLING)) {
                         player.removeEffect(MobEffects.SLOW_FALLING);
                     }
