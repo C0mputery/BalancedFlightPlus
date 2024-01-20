@@ -16,6 +16,8 @@
 
 	[Settings."Balancing Config"]
 		#Range: 0.0 ~ 10.0
+		"Disruptor Distance Multiplier (0d -> 10d, default 1d)" = 0.25
+		#Range: 0.0 ~ 10.0
 		"Anchor Distance Multiplier (0d -> 10d, default 1d)" = 1.0
 		"Disable Fall Damage Near Flight Anchor" = true
 		"Disable Fall Damage When Wearing Ascended Ring" = true

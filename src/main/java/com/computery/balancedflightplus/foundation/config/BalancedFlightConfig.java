@@ -44,7 +44,7 @@ public class BalancedFlightConfig
 
         builder.Block("Balancing Config", b -> {
             anchorDistanceMultiplier = b.defineInRange("Anchor Distance Multiplier (0d -> 10d, default 1d)", 1.0d, 0.0d, 10.0d);
-            disruptorDistanceMultiplier = b.defineInRange("Anchor Distance Multiplier (0d -> 10d, default 1d)", 0.25d, 0.0d, 10.0d);
+            disruptorDistanceMultiplier = b.defineInRange("Disruptor Distance Multiplier (0d -> 10d, default 1d)", 0.25d, 0.0d, 10.0d);
             disableFallDamageWhenWearingRing = b.define("Disable Fall Damage When Wearing Ascended Ring", true);
             disableFallDamageNearAnchor = b.define("Disable Fall Damage Near Flight Anchor", true);
         });
