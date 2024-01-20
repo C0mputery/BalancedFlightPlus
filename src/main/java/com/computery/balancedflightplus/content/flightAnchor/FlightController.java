@@ -15,21 +15,24 @@ public class FlightController
 {
     public static void tick(Player player)
     {
-        if (player.isCreative() || player.isSpectator()) {
+        if (isInCreativeOrSpectator(player)) {
             return;
         }
+
+        // Print thing here
+        System.out.println("FlightController.tick");
 
         FlightMode allowed = AllowedFlightModes(player, false);
         switch (allowed) {
             case None, Elytra -> {
-                if (player.getAbilities().mayfly) {
+                if (player.getAbilities().mayfly && !isInCreativeOrSpectator(player)) {
                     stopFlying(player);
                     // handle falling out of sky
-                    player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200));
+                    if (!player.onGround()) { player.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200)); System.out.println("Giving Slowfall.tick"); }
                 }
             }
             case Creative, Both -> {
-                if (!player.getAbilities().mayfly) {
+                if (!player.getAbilities().mayfly && !isInCreativeOrSpectator(player)) {
                     if (player.hasEffect(MobEffects.SLOW_FALLING)) {
                         player.removeEffect(MobEffects.SLOW_FALLING);
                     }
@@ -37,6 +40,10 @@ public class FlightController
                 }
             }
         }
+    }
+
+    public static boolean isInCreativeOrSpectator(Player player) {
+        return player.isCreative() || player.isSpectator();
     }
 
     public static void startFlying(Player player) {
