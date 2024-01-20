@@ -123,27 +123,17 @@ public class FlightDisruptorBehaviour extends BlockEntityBehaviour
 
         for(int i1 = 0; i1 < 10 && blockpos.getY() <= l; ++i1) {
             BlockState blockstate = level.getBlockState(blockpos);
-            float[] afloat = blockstate.getBeaconColorMultiplier(level, blockpos, blockPos);
-            if (afloat != null) {
-                if (entity.checkingBeamSections.size() <= 1) {
-                    beaconblockentity$beaconbeamsection = new BeaconBlockEntity.BeaconBeamSection(afloat);
+            float[] afloat = DyeColor.RED.getTextureDiffuseColors();
+            if (entity.checkingBeamSections.size() <= 1) {
+                beaconblockentity$beaconbeamsection = new BeaconBlockEntity.BeaconBeamSection(afloat);
+                entity.checkingBeamSections.add(beaconblockentity$beaconbeamsection);
+            } else if (beaconblockentity$beaconbeamsection != null) {
+                if (Arrays.equals(afloat, beaconblockentity$beaconbeamsection.getColor())) {
+                    beaconblockentity$beaconbeamsection.increaseHeight();
+                } else {
+                    beaconblockentity$beaconbeamsection = new BeaconBlockEntity.BeaconBeamSection(new float[]{(beaconblockentity$beaconbeamsection.getColor()[0] + afloat[0]) / 2.0F, (beaconblockentity$beaconbeamsection.getColor()[1] + afloat[1]) / 2.0F, (beaconblockentity$beaconbeamsection.getColor()[2] + afloat[2]) / 2.0F});
                     entity.checkingBeamSections.add(beaconblockentity$beaconbeamsection);
-                } else if (beaconblockentity$beaconbeamsection != null) {
-                    if (Arrays.equals(afloat, beaconblockentity$beaconbeamsection.getColor())) {
-                        beaconblockentity$beaconbeamsection.increaseHeight();
-                    } else {
-                        beaconblockentity$beaconbeamsection = new BeaconBlockEntity.BeaconBeamSection(new float[]{(beaconblockentity$beaconbeamsection.getColor()[0] + afloat[0]) / 2.0F, (beaconblockentity$beaconbeamsection.getColor()[1] + afloat[1]) / 2.0F, (beaconblockentity$beaconbeamsection.getColor()[2] + afloat[2]) / 2.0F});
-                        entity.checkingBeamSections.add(beaconblockentity$beaconbeamsection);
-                    }
                 }
-            } else {
-                if (beaconblockentity$beaconbeamsection == null || blockstate.getLightBlock(level, blockpos) >= 15 && !blockstate.is(Blocks.BEDROCK)) {
-                    entity.checkingBeamSections.clear();
-                    entity.lastCheckY = l;
-                    break;
-                }
-
-                beaconblockentity$beaconbeamsection.increaseHeight();
             }
 
             blockpos = blockpos.above();
