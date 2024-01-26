@@ -7,10 +7,12 @@
   "balancedflightplus.ponder.tag.flight_anchor.description": "ǝɔɹoℲ ןɐuoıʇɐʇoᴚ ɥʇıʍ ʇɥbıןɟ pǝɹǝʍoԀ",
   "block.balancedflightplus.flight_anchor": "ɹoɥɔuⱯ ʇɥbıןℲ",
   "block.balancedflightplus.flight_disruptor": "ɹoʇdnɹsıᗡ ʇɥbıןℲ",
+  "block.balancedflightplus.placement_disruptor": "ɹoʇdnɹsıᗡ ʇuǝɯǝɔɐןԀ",
   "curios.identifier.flight_ring": "buıᴚ ʇɥbıןℲ",
   "item.balancedflightplus.ascended_flight_ring": "buıᴚ ʇɥbıןℲ pǝpuǝɔsⱯ",
   "itemGroup.balancedflight.base": "ʇɥbıןℲ pǝɔuɐןɐᗺ :ǝʇɐǝɹƆ",
   "tooltip.balancedflightplus.ascended_flight_ring": "˙ǝɹǝɥʍʎuɐ ʇɥbıןɟ sʍoןןɐ ʇı 'ʇǝʎ puɐ 'buıɹ uǝpןob ǝsuǝp ʎןqıpǝɹɔuı uⱯ",
   "tooltip.balancedflightplus.flight_anchor": "˙pןɹoʍɹǝʌo ǝɥʇ uı sʞɹoʍ ʎןuO ˙snıpɐɹ ʞɔoןq ϛᄅ ɐ uı ʇɥbıןɟ sʍoןןⱯ",
-  "tooltip.balancedflightplus.flight_disruptor": "˙pןɹoʍɹǝʌo ǝɥʇ uı sʞɹoʍ ʎןuO ˙snıpɐɹ ʞɔoןq ϛᄅ ɐ uı ʇɥbıןɟ sʍoןןⱯ"
+  "tooltip.balancedflightplus.flight_disruptor": "˙pןɹoʍɹǝʌo ǝɥʇ uı sʞɹoʍ ʎןuO ˙snıpɐɹ ʞɔoןq ϛᄅ ɐ uı ʇɥbıןɟ sʍoןןⱯ",
+  "tooltip.balancedflightplus.placement_disruptor": "˙pןɹoʍɹǝʌo ǝɥʇ uı sʞɹoʍ ʎןuO ˙snıpɐɹ ʞɔoןq ϛᄅ ɐ uı ʇɥbıןɟ sʍoןןⱯ"
 }

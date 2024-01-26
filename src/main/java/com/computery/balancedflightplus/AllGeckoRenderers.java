@@ -6,6 +6,10 @@ import com.computery.balancedflightplus.content.flightDisruptor.FlightDisruptorI
 import com.computery.balancedflightplus.content.flightDisruptor.entity.FlightDisruptorEntity;
 import com.computery.balancedflightplus.content.flightDisruptor.render.FlightDisruptorBeamRenderer;
 import com.computery.balancedflightplus.content.flightDisruptor.render.FlightDisruptorSafeRenderer;
+import com.computery.balancedflightplus.content.placementDisruptor.PlacementDisruptorItem;
+import com.computery.balancedflightplus.content.placementDisruptor.entity.PlacementDisruptorEntity;
+import com.computery.balancedflightplus.content.placementDisruptor.render.PlacementDisruptorBeamRenderer;
+import com.computery.balancedflightplus.content.placementDisruptor.render.PlacementDisruptorSafeRenderer;
 import com.computery.balancedflightplus.foundation.render.ConfiguredGeoModel;
 import com.computery.balancedflightplus.foundation.render.KineticGeckoRenderInfo;
 import com.computery.balancedflightplus.content.flightAnchor.render.*;
@@ -24,6 +28,13 @@ public class AllGeckoRenderers
                     new FlightDisruptorSafeRenderer(),
                     BalancedFlight.FLIGHT_DISRUPTOR_BLOCK.get().defaultBlockState(),
                     new FlightDisruptorBeamRenderer());
+
+    public static KineticGeckoRenderInfo<PlacementDisruptorEntity, ?> PlacementDisruptorGeckoRenderer =
+            new KineticGeckoRenderInfo<PlacementDisruptorEntity, PlacementDisruptorItem>(
+                    new ConfiguredGeoModel("placement_disruptor"),
+                    new PlacementDisruptorSafeRenderer(),
+                    BalancedFlight.PLACEMENT_DISRUPTOR_BLOCK.get().defaultBlockState(),
+                    new PlacementDisruptorBeamRenderer());
 }
 
 

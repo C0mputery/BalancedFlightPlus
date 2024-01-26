@@ -1,5 +1,9 @@
 package com.computery.balancedflightplus;
 
+import com.computery.balancedflightplus.content.placementDisruptor.PlacementDisruptorBlock;
+import com.computery.balancedflightplus.content.placementDisruptor.PlacementDisruptorItem;
+import com.computery.balancedflightplus.content.placementDisruptor.entity.PlacementDisruptorEntity;
+import com.computery.balancedflightplus.content.placementDisruptor.render.PlacementDisruptorKineticInstance;
 import com.simibubi.create.AllCreativeModeTabs;
 import com.simibubi.create.content.kinetics.BlockStressDefaults;
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -77,6 +81,19 @@ public class BalancedFlight {
             .build()
             .register();
 
+    public static final BlockEntry<? extends Block> PLACEMENT_DISRUPTOR_BLOCK = BalancedFlight.CREATE_REGISTRATE
+            .object("placement_disruptor")
+            .block(PlacementDisruptorBlock::new)
+            .transform(BlockStressDefaults.setImpact(256.0))
+            .properties(properties -> BlockBehaviour.Properties.of().mapColor(MapColor.METAL).strength(2).sound(SoundType.NETHERITE_BLOCK).noOcclusion())
+            .defaultLoot()
+            .tag(BlockTags.MINEABLE_WITH_PICKAXE)
+            .tag(BlockTags.NEEDS_STONE_TOOL)
+            .geckoItem(PlacementDisruptorItem::new)
+            .initialProperties(() -> new Item.Properties().stacksTo(16))
+            .build()
+            .register();
+
     public static final BlockEntityEntry<FlightAnchorEntity> FLIGHT_ANCHOR_BLOCK_ENTITY = BalancedFlight.CREATE_REGISTRATE
             .blockEntity("flight_anchor", FlightAnchorEntity::new)
             .instance(() -> FlightAnchorKineticInstance::new)
@@ -89,6 +106,13 @@ public class BalancedFlight {
             .instance(() -> FlightDisruptorKineticInstance::new)
             .validBlock(FLIGHT_DISRUPTOR_BLOCK)
             .renderer(() -> AllGeckoRenderers.FlightDisruptorGeckoRenderer.TileRenderer::apply)
+            .register();
+
+    public static final BlockEntityEntry<PlacementDisruptorEntity> PLACEMENT_DISRUPTOR_BLOCK_ENTITY = BalancedFlight.CREATE_REGISTRATE
+            .blockEntity("placement_disruptor", PlacementDisruptorEntity::new)
+            .instance(() -> PlacementDisruptorKineticInstance::new)
+            .validBlock(PLACEMENT_DISRUPTOR_BLOCK)
+            .renderer(() -> AllGeckoRenderers.PlacementDisruptorGeckoRenderer.TileRenderer::apply)
             .register();
     public static final ItemEntry<? extends Item> ASCENDED_FLIGHT_RING = BalancedFlight.CREATE_REGISTRATE
             .item("ascended_flight_ring", FlightRing::new)

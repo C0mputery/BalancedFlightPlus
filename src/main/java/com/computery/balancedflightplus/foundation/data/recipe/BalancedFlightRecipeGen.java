@@ -21,6 +21,7 @@ public class BalancedFlightRecipeGen extends CreateRecipeProvider {
     GeneratedRecipe ASCENDED_FLIGHT_RING;
     GeneratedRecipe FLIGHT_ANCHOR;
     GeneratedRecipe FLIGHT_DISRUPTOR;
+    GeneratedRecipe PLACEMENT_DISRUPTOR;
 
     public BalancedFlightRecipeGen(PackOutput dataGenerator) {
         super(dataGenerator);
@@ -62,6 +63,17 @@ public class BalancedFlightRecipeGen extends CreateRecipeProvider {
                 .addStep(DeployerApplicationRecipe::new, (rb) -> rb.require(com.simibubi.create.AllBlocks.BRASS_BLOCK.get()))
                 .addStep(DeployerApplicationRecipe::new, (rb) -> rb.require(Blocks.RED_STAINED_GLASS))
                 .addStep(DeployerApplicationRecipe::new, (rb) -> rb.require(Items.MAGMA_CREAM)));
+
+        PLACEMENT_DISRUPTOR = sequencedAssembly(BalancedFlight.PLACEMENT_DISRUPTOR_BLOCK.getId(), (b) -> b
+                .require(Items.BEACON)
+                .transitionTo(Items.BEACON)
+                .addOutput(BalancedFlight.PLACEMENT_DISRUPTOR_BLOCK.get(), 100.0F)
+                .loops(1)
+                .addStep(DeployerApplicationRecipe::new, (rb) -> rb.require(com.simibubi.create.AllItems.PRECISION_MECHANISM.get()))
+                .addStep(DeployerApplicationRecipe::new, (rb) -> rb.require(com.simibubi.create.AllBlocks.RAILWAY_CASING.get()))
+                .addStep(DeployerApplicationRecipe::new, (rb) -> rb.require(com.simibubi.create.AllBlocks.BRASS_BLOCK.get()))
+                .addStep(DeployerApplicationRecipe::new, (rb) -> rb.require(Blocks.LIME_STAINED_GLASS))
+                .addStep(DeployerApplicationRecipe::new, (rb) -> rb.require(Items.SLIME_BALL)));
     }
 
     GeneratedRecipe mechanicalCrafting(Supplier<ItemLike> result, int amount, String suffix, UnaryOperator<MechanicalCraftingRecipeBuilder> builder) {

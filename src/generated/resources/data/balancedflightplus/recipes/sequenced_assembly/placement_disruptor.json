@@ -1,0 +1,98 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:beacon"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "chance": 100.0,
+      "item": "balancedflightplus:placement_disruptor"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:beacon"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:beacon"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:beacon"
+        },
+        {
+          "item": "create:railway_casing"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:beacon"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:beacon"
+        },
+        {
+          "item": "create:brass_block"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:beacon"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:beacon"
+        },
+        {
+          "item": "minecraft:lime_stained_glass"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:beacon"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:beacon"
+        },
+        {
+          "item": "minecraft:slime_ball"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:beacon"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "minecraft:beacon"
+  }
+}

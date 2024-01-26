@@ -9,12 +9,12 @@ import net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
+import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber({Dist.CLIENT})
 public class InputEvents {
-
     @SubscribeEvent
     public static void onKeyboardInput(InputEvent.Key event) {
         if (AllKeybinds.TAKE_OFF_KEY.isDown() && BalancedFlightConfig.enableTakeOff.get()) {
